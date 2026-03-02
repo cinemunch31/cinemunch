@@ -16,6 +16,7 @@ html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helv
 .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 8px 24px rgba(11,78,190,0.12)}
 .btn.purple{background:linear-gradient(90deg,#7c3aed,#6d28d9);color:white;box-shadow:0 8px 24px rgba(124,58,237,0.2);padding:16px 32px;font-size:16px;min-width:140px;transition:all 0.2s}
 .btn.purple:disabled{opacity:0.5;cursor:not-allowed;box-shadow:none}
+.btn.purple.permanently-disabled{opacity:0.4;cursor:not-allowed!important;background:linear-gradient(90deg,#6b21a8,#581c87)}
 .btn.outline{background:transparent;border:1px solid rgba(11,14,20,0.06)}
 .btn.ghost{background:transparent;border:1px solid rgba(11,14,20,0.04)}
 .btn.small{padding:6px 8px;font-size:13px}

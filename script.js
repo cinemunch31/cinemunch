@@ -32,10 +32,13 @@ function setupTimerButton(){
 }
 
 function startTimer(){
+  // Prevent clicking if already permanently disabled
+  if(timerBtn.disabled) return;
   if(timerActive) return;
   timerActive = true;
   timerCountdown = 10;
   timerBtn.disabled = true;
+  timerBtn.classList.add('permanently-disabled');
   timerBtn.textContent = formatTime(10);
   
   const interval = setInterval(()=>{
@@ -77,9 +80,7 @@ function startBottomTimer(){
       bottomBtn.disabled = false;
       bottomBtn.textContent = 'Continue';
       timerActive = false;
-      // Re-enable top button
-      timerBtn.disabled = false;
-      timerBtn.classList.add('re-enabled');
+      // Top button stays permanently disabled - no re-enabling
     }
   }, 1000);
 }
