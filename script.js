@@ -1,6 +1,57 @@
 const POSTS_URL = 'posts.json';
 let posts = [];
 let page = 1; const PAGE_SIZE = 6;
+let timerActive = false;
+let timerCountdown = 20;
+
+const postList = document.getElementById('postList');
+const stats = document.getElementById('stats');
+const search = document.getElementById('search');
+const categoryFilter = document.getElementById('categoryFilter');
+const sortSelect = document.getElementById('sort');
+const prevPage = document.getElementById('prevPage');
+const nextPage = document.getElementById('nextPage');
+const pageInfo = document.getElementById('pageInfo');
+const subscribeBtn = document.getElementById('subscribeBtn');
+const subscribeModal = document.getElementById('subscribeModal');
+const closeModal = document.getElementById('closeModal');
+const cancelSubscribe = document.getElementById('cancelSubscribe');
+const confirmSubscribe = document.getElementById('confirmSubscribe');
+const emailInput = document.getElementById('email');
+const darkToggle = document.getElementById('darkToggle');
+const timerBtn = document.getElementById('timerBtn');
+const timerDisplay = document.getElementById('timerDisplay');
+
+function setupTimerButton(){
+  timerBtn.addEventListener('click', startTimer);
+}
+
+function startTimer(){
+  if(timerActive) return;
+  timerActive = true;
+  timerCountdown = 20;
+  timerBtn.disabled = true;
+  timerDisplay.classList.remove('hidden');
+  
+  const interval = setInterval(()=>{
+    timerCountdown--;
+    timerDisplay.textContent = timerCountdown;
+    
+    if(timerCountdown === 15){
+      timerBtn.textContent = 'Continue';
+    }
+    
+    if(timerCountdown <= 0){
+      clearInterval(interval);
+      timerDisplay.classList.add('hidden');
+      timerBtn.disabled = false;
+      timerBtn.textContent = 'Click here';
+      timerActive = false;
+      // Scroll to bottom
+      window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+    }
+  }, 1000);
+}
 const postList = document.getElementById('postList');
 const stats = document.getElementById('stats');
 const search = document.getElementById('search');
@@ -112,6 +163,7 @@ darkToggle.addEventListener('click', ()=>{document.body.classList.toggle('dark')
 
 // Init
 loadPosts();
+setupTimerButton();
 
 // Expose small helper for dev
 window._fs = {posts, render};

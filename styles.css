@@ -14,6 +14,7 @@ html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helv
 .select{padding:9px 10px;border-radius:8px;border:1px solid rgba(11,14,20,0.06)}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
 .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 8px 24px rgba(11,78,190,0.12)}
+.btn.purple{background:linear-gradient(90deg,#7c3aed,#6d28d9);color:white;box-shadow:0 8px 24px rgba(124,58,237,0.2);padding:16px 32px;font-size:16px}
 .btn.outline{background:transparent;border:1px solid rgba(11,14,20,0.06)}
 .btn.ghost{background:transparent;border:1px solid rgba(11,14,20,0.04)}
 .btn.small{padding:6px 8px;font-size:13px}
@@ -46,6 +47,10 @@ html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helv
 .modal-inner{background:var(--card);padding:22px;border-radius:12px;max-width:420px;width:90%;box-shadow:0 20px 60px rgba(11,14,20,0.24);position:relative}
 .modal-close{position:absolute;right:14px;top:8px;border:0;background:transparent;font-size:22px}
 .page-info{align-self:center}
+.timer-section{padding:60px 0;text-align:center}
+.timer-container{display:flex;justify-content:center;align-items:center;gap:20px;flex-direction:column}
+.timer-text{font-size:48px;font-weight:700;color:var(--accent);min-width:100px}
+.timer-text.hidden{display:none}
 /* Responsive */
 @media (max-width:1000px){.post-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:720px){.header-grid{flex-direction:column;align-items:flex-start}.hero-grid{flex-direction:column}.post-grid{grid-template-columns:1fr}.footer-grid{flex-direction:column}}
