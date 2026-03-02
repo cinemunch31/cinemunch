@@ -2,7 +2,7 @@ const POSTS_URL = 'posts.json';
 let posts = [];
 let page = 1; const PAGE_SIZE = 6;
 let timerActive = false;
-let timerCountdown = 20;
+let timerCountdown = 10;
 
 const postList = document.getElementById('postList');
 const stats = document.getElementById('stats');
@@ -21,6 +21,12 @@ const emailInput = document.getElementById('email');
 const darkToggle = document.getElementById('darkToggle');
 const timerBtn = document.getElementById('timerBtn');
 
+function formatTime(seconds){
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
 function setupTimerButton(){
   timerBtn.addEventListener('click', startTimer);
 }
@@ -28,15 +34,15 @@ function setupTimerButton(){
 function startTimer(){
   if(timerActive) return;
   timerActive = true;
-  timerCountdown = 20;
+  timerCountdown = 10;
   timerBtn.disabled = true;
-  timerBtn.textContent = '20';
+  timerBtn.textContent = formatTime(10);
   
   const interval = setInterval(()=>{
     timerCountdown--;
-    timerBtn.textContent = timerCountdown;
+    timerBtn.textContent = formatTime(timerCountdown);
     
-    if(timerCountdown === 15){
+    if(timerCountdown === 5){
       timerBtn.classList.add('continue-state');
     }
     
@@ -46,6 +52,9 @@ function startTimer(){
       timerBtn.textContent = 'Click here';
       timerBtn.classList.remove('continue-state');
       timerActive = false;
+      // Show bottom button
+      const bottomBtn = document.getElementById('bottomTimerBtn');
+      if(bottomBtn) bottomBtn.style.display = 'inline-block';
       // Scroll to bottom
       window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
     }
@@ -148,6 +157,12 @@ darkToggle.addEventListener('click', ()=>{document.body.classList.toggle('dark')
 // Init
 loadPosts();
 setupTimerButton();
+
+// Setup bottom timer button
+const bottomTimerBtn = document.getElementById('bottomTimerBtn');
+if(bottomTimerBtn){
+  bottomTimerBtn.addEventListener('click', startTimer);
+}
 
 // Expose small helper for dev
 window._fs = {posts, render};
