@@ -48,11 +48,10 @@ function startTimer(){
     
     if(timerCountdown <= 0){
       clearInterval(interval);
-      timerBtn.disabled = false;
       timerBtn.textContent = 'Click here';
       timerBtn.classList.remove('continue-state');
       timerActive = false;
-      // Show bottom button
+      // Keep top button disabled - show bottom button
       const bottomBtn = document.getElementById('bottomTimerBtn');
       if(bottomBtn) bottomBtn.style.display = 'inline-block';
       // Scroll to bottom
@@ -78,6 +77,9 @@ function startBottomTimer(){
       bottomBtn.disabled = false;
       bottomBtn.textContent = 'Continue';
       timerActive = false;
+      // Re-enable top button
+      timerBtn.disabled = false;
+      timerBtn.classList.add('re-enabled');
     }
   }, 1000);
 }
