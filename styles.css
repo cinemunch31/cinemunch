@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+:root{
+  --bg:#f6f8fb;--card:#ffffff;--muted:#6b7280;--accent:#0f6efd;--accent-2:#0b5ed7;--glass:rgba(255,255,255,0.6);
+  --radius:12px;--shadow:0 10px 30px rgba(12,20,40,0.08);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#0b1220;background:var(--bg)}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.header-grid{display:flex;align-items:center;justify-content:space-between}
+.brand h1{margin:0;font-size:22px;letter-spacing:0.6px}
+.tag{margin:0;color:var(--muted);font-size:13px}
+.nav{display:flex;gap:12px;align-items:center}
+.search{padding:10px 12px;border-radius:10px;border:1px solid rgba(11,14,20,0.06);min-width:220px}
+.select{padding:9px 10px;border-radius:8px;border:1px solid rgba(11,14,20,0.06)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 8px 24px rgba(11,78,190,0.12)}
+.btn.outline{background:transparent;border:1px solid rgba(11,14,20,0.06)}
+.btn.ghost{background:transparent;border:1px solid rgba(11,14,20,0.04)}
+.btn.small{padding:6px 8px;font-size:13px}
+.hero{background:linear-gradient(180deg,#ffffff00,rgba(255,255,255,0.6));padding:40px 0}
+.hero-grid{display:flex;gap:30px;align-items:center}
+.hero-content h2{margin:0;font-size:32px}
+.hero-content p{color:var(--muted);margin:10px 0 18px}
+.hero-ctas{display:flex;gap:12px}
+.hero-art{flex:1;display:flex;align-items:center;justify-content:center}
+.card-graphic{width:220px;height:220px;border-radius:20px;background:linear-gradient(135deg,#e9f1ff,#f7fbff);display:flex;align-items:center;justify-content:center;font-size:64px;color:var(--accent-2);box-shadow:var(--shadow)}
+.posts-section{padding:12px 0 60px}
+.controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.post-card{background:var(--card);border-radius:12px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+.post-card .title{font-weight:700}
+.post-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}
+.card-excerpt{color:#374151;font-size:14px}
+.card-actions{display:flex;gap:8px;align-items:center}
+.pagination{display:flex;justify-content:center;gap:12px;margin-top:22px}
+.featured{margin:40px 0}
+.featured-article{background:linear-gradient(90deg,#fff,#fbfcff);padding:18px;border-radius:12px;box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center}
+.site-footer{background:#fff;margin-top:40px;border-top:1px solid rgba(11,14,20,0.04);padding:28px 0 40px}
+.footer-grid{display:flex;gap:40px;justify-content:space-between}
+.links{list-style:none;padding:0;margin:0}
+.links li{margin:6px 0}
+.text-muted{color:var(--muted)}
+.input{padding:10px;border-radius:8px;border:1px solid rgba(11,14,20,0.06);width:100%;margin:8px 0}
+.modal{position:fixed;inset:0;background:rgba(7,12,25,0.45);display:flex;align-items:center;justify-content:center}
+.modal.hidden{display:none}
+.modal-inner{background:var(--card);padding:22px;border-radius:12px;max-width:420px;width:90%;box-shadow:0 20px 60px rgba(11,14,20,0.24);position:relative}
+.modal-close{position:absolute;right:14px;top:8px;border:0;background:transparent;font-size:22px}
+.page-info{align-self:center}
+/* Responsive */
+@media (max-width:1000px){.post-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:720px){.header-grid{flex-direction:column;align-items:flex-start}.hero-grid{flex-direction:column}.post-grid{grid-template-columns:1fr}.footer-grid{flex-direction:column}}
+/* Dark mode support */
+body.dark{--bg:#081225;--card:#071226;--muted:#9aa6b2;color:#e6eef8}
+body.dark .brand h1, body.dark .tag{color:#e6eef8}
+body.dark .search, body.dark .select, body.dark .input{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:inherit}
+body.dark .card-graphic{background:linear-gradient(135deg,#061a2e,#072033);color:#7ec0ff}
+body.dark .post-card{box-shadow:0 6px 20px rgba(1,5,12,0.6)}

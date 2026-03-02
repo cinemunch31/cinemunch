@@ -1,0 +1,13 @@
+{
+  "name": "finsight-blog",
+  "version": "1.0.0",
+  "description": "Static finance blog with simple markdown-based CMS",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^17.0.3"
+  }
+}

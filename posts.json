@@ -1,0 +1,58 @@
+[
+  {
+    "id": "p1",
+    "title": "5 Rules for Long-Term Investing",
+    "date": "2026-02-15",
+    "category": "investing",
+    "excerpt": "Time-tested principles to build a resilient long-term portfolio.",
+    "content": "<p>Build a diversified portfolio, rebalance annually, and focus on low-cost funds. We discuss risk tolerance, horizon, and tax-efficient strategies in depth.</p>\n"
+  },
+  {
+    "id": "p10",
+    "title": "Dollar-Cost Averaging Explained",
+    "date": "2026-01-18",
+    "category": "investing",
+    "excerpt": "A disciplined approach to investing regardless of market timing.",
+    "content": "<p>Set a fixed amount each period; the market price fluctuations automatically purchase fewer or more shares, smoothing the entry cost over time.</p>\n"
+  },
+  {
+    "id": "p11",
+    "title": "Why Rebalancing Matters",
+    "date": "2026-02-05",
+    "category": "portfolio",
+    "excerpt": "Keeping risk in check through periodic adjustment.",
+    "content": "<p>Regularly selling winners and buying laggards realigns your mix to the target allocation and enforces a buy-low, sell-high discipline.</p>\n"
+  },
+  {
+    "id": "p2",
+    "title": "How Interest Rates Impact Valuations",
+    "date": "2026-01-28",
+    "category": "markets",
+    "excerpt": "A clear explainer showing the link between rates and asset prices.",
+    "content": "<p>Interest rates set the discount rate for future cash flows. When rates rise, valuations compress; when rates fall, growth stocks often expand multiples.</p>\n"
+  },
+  {
+    "id": "p3",
+    "title": "Tax-Efficient Investing 101",
+    "date": "2026-03-01",
+    "category": "personal-finance",
+    "excerpt": "Strategies for minimizing taxes on returns across accounts.",
+    "content": "<p>Utilize tax-advantaged accounts, harvest losses, and prioritize tax-efficient funds in taxable accounts.</p>\n"
+  },
+  {
+    "id": "p8",
+    "title": "Navigating Volatility with Bonds",
+    "date": "2026-02-25",
+    "category": "fixed-income",
+    "excerpt": "Using bond ladders and duration to dampen market swings.",
+    "content": "<p>Bonds offer a stabilizing anchor; learn how to ladder maturities and monitor credit to build resilience into your portfolio.</p>\n"
+  },
+  {
+    "id": "p9",
+    "title": "Cryptocurrency: Beyond the Hype",
+    "date": "2026-03-03",
+    "category": "alternative",
+    "excerpt": "Assessing crypto assets from a risk/reward standpoint.",
+    "content": "<p>Understand blockchain fundamentals, tokenomics, and how to position a small, speculative sleeve within a broader allocation.</p>\n"
+  }
+]

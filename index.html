@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FinSight — Finance & Markets Blog</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="FinSight — Professional financial insights, markets, investing and personal finance guides." />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <h1>FinSight</h1>
+        <p class="tag">Finance • Markets • Investing</p>
+      </div>
+      <nav class="nav">
+        <input id="search" class="search" placeholder="Search articles, tickers, topics...">
+        <select id="categoryFilter" class="select">
+          <option value="all">All Categories</option>
+        </select>
+        <button id="darkToggle" class="btn ghost">Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h2>Market insights, investment strategies, and money management</h2>
+          <p>Actionable analysis and clear explanations for investors and professionals.</p>
+          <div class="hero-ctas">
+            <button id="subscribeBtn" class="btn primary">Subscribe</button>
+            <a href="#posts" class="btn outline">Browse Posts</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="card-graphic">$</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="posts" class="container posts-section">
+      <div class="controls">
+        <div id="stats" class="text-muted">0 posts</div>
+        <div class="sort-pagination">
+          <select id="sort" class="select small">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="postList" class="post-grid"></div>
+
+      <div class="pagination">
+        <button id="prevPage" class="btn ghost">Prev</button>
+        <span id="pageInfo" class="page-info">Page 1</span>
+        <button id="nextPage" class="btn ghost">Next</button>
+      </div>
+    </section>
+
+    <section class="container featured">
+      <h3>Featured Deep Dive</h3>
+      <article class="featured-article">
+        <h4>Understanding Portfolio Construction</h4>
+        <p>Balanced allocations, risk budgeting, and rebalancing tactics for long-term growth.</p>
+        <div class="meta">
+          <button class="btn outline small">Read More</button>
+          <button class="btn ghost small">Share</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>FinSight</h4>
+        <p class="text-muted">Professional finance commentary & educational guides.</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul class="links">
+          <li><a href="#posts">Articles</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p class="text-muted">hello@finsight.example</p>
+      </div>
+    </div>
+    <div class="container copyright">© FinSight — All rights reserved.</div>
+  </footer>
+
+  <!-- Subscribe Modal -->
+  <div id="subscribeModal" class="modal hidden">
+    <div class="modal-inner">
+      <button id="closeModal" class="modal-close">×</button>
+      <h3>Subscribe to FinSight</h3>
+      <p>Get weekly analysis and curated market notes.</p>
+      <input id="email" placeholder="Your email address" class="input">
+      <div class="modal-actions">
+        <button id="confirmSubscribe" class="btn primary">Subscribe</button>
+        <button id="cancelSubscribe" class="btn ghost">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
