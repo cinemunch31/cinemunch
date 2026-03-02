@@ -61,6 +61,27 @@ function startTimer(){
   }, 1000);
 }
 
+function startBottomTimer(){
+  const bottomBtn = document.getElementById('bottomTimerBtn');
+  if(!bottomBtn || timerActive) return;
+  timerActive = true;
+  let countdown = 5;
+  bottomBtn.disabled = true;
+  bottomBtn.textContent = formatTime(5);
+  
+  const interval = setInterval(()=>{
+    countdown--;
+    bottomBtn.textContent = formatTime(countdown);
+    
+    if(countdown <= 0){
+      clearInterval(interval);
+      bottomBtn.disabled = false;
+      bottomBtn.textContent = 'Continue';
+      timerActive = false;
+    }
+  }, 1000);
+}
+
 async function loadPosts(){
   try{
     const res = await fetch(POSTS_URL);
@@ -161,7 +182,7 @@ setupTimerButton();
 // Setup bottom timer button
 const bottomTimerBtn = document.getElementById('bottomTimerBtn');
 if(bottomTimerBtn){
-  bottomTimerBtn.addEventListener('click', startTimer);
+  bottomTimerBtn.addEventListener('click', startBottomTimer);
 }
 
 // Expose small helper for dev
